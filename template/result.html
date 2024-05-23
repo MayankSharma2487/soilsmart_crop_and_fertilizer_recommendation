@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit-icons.min.js"></script>
+  
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/X.X.X/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/all.min.css">
+  
+
+</head>
+<body >
+  
+<div class="uk-panel uk-padding uk-background-primary uk-light">
+    <a class="uk-logo" href="{{url_for('welcome')}}">SOILSMART</a>
+</div>
+
+
+<h1 style="text-align: center; text-decoration: underline; color: rgb(26, 132, 238); font-family: 'Open Sans', Arial, sans-serif; ;">{{ data }}</h1>
+<h1 style="text-align: center;">Fertilizer Recommendation</h1>
+
+{% if data == "Urea" %}
+<div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src="{{ url_for('static', filename='Urea.jpg') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="#" uk-marker> Urea</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: Urea</p>
+
+  
+
+{% elif data == 'DAP' %}  
+<div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src="{{ url_for('static', filename='DAP.jpeg') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="#" uk-marker> DAP</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: DAP</p>
+
+{% elif data == '14-35-14' %} 
+ <div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src=" {{ url_for('static', filename='14-35-14.jpeg') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="https://bharat-enterprises.co.in/gromor-14-35-14/" uk-marker> 14-35-14</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: 14-35-14</p>
+
+ 
+{% elif data == '28-28' %}  
+<div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+   <img src="{{ url_for('static', filename='28-28.jpeg') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+   <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="https://sahasracropscience.com/npk282828.php" uk-marker> 28-28</a>
+ </div>
+<p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: 28-28</p>
+
+
+{% elif data == '17-17-17' %} 
+ <div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src="{{ url_for('static', filename='17-17-17.jpg') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="https://theyardandgarden.com/triple-17-17-17-fertilizer/" uk-marker>17-17-17</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: 17-17-17</p>
+
+ {% elif data == '20-20' %} 
+ <div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src="{{ url_for('static', filename='20-20.webp') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="#" uk-marker>20-20</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: 20-20</p>
+
+ {% elif data == '10-26-26' %} 
+ <div class="uk-container uk-text-center">  <div class="uk-inline uk-card uk-card-default uk-card-body uk-border-rounded">
+    <img src="{{ url_for('static', filename='10-26-26.png') }}" alt="Urea" class="uk-border-rounded uk-width-1-2@m">
+    <a class="uk-position-absolute uk-transform-center" style="left: 50%; text-decoration: none; top: 50%" href="https://www.iffco.in/en/npk-10-26-26" uk-marker>10-26-26</a>
+  </div>
+ <p style="font-style: italic; color: dodgerblue;text-align: center; ">Recommended Fertilizer: 10-26-26</p>
+{% else %}
+  <p>Unexpected prediction value.</p>
+{% endif %}
+</div>  
+
+<footer class="uk-section uk-section-default uk-section-small  uk-background-primary">
+    <div class="uk-container uk-text-center">
+      <h5 style="color: rgb(197, 197, 197)">Copyright &copy; 2024 Mayank Sharma</h5>
+      <ul class="uk-iconnav uk-justify uk-margin-top">
+        <li><a style="color: rgb(197, 197, 197)" href="https://github.com/" class="uk-icon-link"><i class="fab fa-github"></i>github</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.facebook.com/" class="uk-icon-link"><i class="fab fa-facebook-f"></i>facebook</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.instagram.com/" class="uk-icon-link"><i class="fab fa-instagram"></i>instagram</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.linkedin.com/" class="uk-icon-link"><i class="fab fa-linkedin-in"></i>linkedin</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://twitter.com/" class="uk-icon-link"><i class="fab fa-twitter"></i>twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

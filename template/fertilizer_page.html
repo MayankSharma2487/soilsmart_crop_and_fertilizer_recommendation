@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Numeric Inputs Form</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit-icons.min.js"></script>
+    
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/X.X.X/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/all.min.css">
+</head>
+<body>
+  <nav class="uk-navbar-container" style="border-radius: 5px; background-color: #007bff;">
+    <div class="uk-container uk-background-primary">
+        <div uk-navbar="align: center" class="uk-background-primary">
+            
+            <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#" style="color: rgb(214, 214, 214); font-weight: bold;">SoilSmart</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="{{url_for('welcome')}}">Home</a></li>
+                                <li><a href="{{url_for('fertilizer_page')}}">fertilizer recommend</a></li>
+                                <li><a href="{{url_for('crop_recommend')}}">crop recommend</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+ 
+  
+  <h2 style="text-align: center;">Enter Values:</h2>
+  <form action="{{ url_for('fertilizer_page') }}" method="POST" class="uk-form uk-form-stacked " style="text-align: center; display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Adjust max-width for different screen sizes */
+  margin: 0 auto;
+  background-color: #fff; /* White background for the form */
+  border: 1px solid #ccc; /* Light border around the form */
+  border-radius: 5px; /* Rounded corners for the form */
+  padding: 20px; /* Padding for better spacing */ ">
+
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input1">Temperature:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input1" name="input1" required>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input2">Humidity:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input2" name="input2" required>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input3">Moisture:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input3" name="input3" required>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label style="text-align: center;" class="uk-form-label" for="input31">Soil Type:</label>
+      <div class="uk-form-controls">
+        <select class="uk-select" id="input31" name="input31" style="text-align: center;">
+          <option value="4">Sandy</option>
+          <option value="2">Loamy</option>
+          <option value="0">Black</option>
+          <option value="3">Red</option>
+          <option value="1">Clayey</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label style="text-align: center;" class="uk-form-label" for="input4">Crop Type:</label>
+      <div class="uk-form-controls">
+        <select style="text-align: center;" class="uk-select" id="input4" name="input4">
+          <option value="3">Maize</option>
+          <option value="8">Sugarcane</option>
+          <option value="1">Cotton</option>
+          <option value="9">Tobacco</option>
+          <option value="6">Paddy</option>
+          <option value="0">Barley</option>
+          <option value="10">Wheat</option>
+          <option value="4">Millets</option>
+          <option value="5">Oil Seeds</option>
+          <option value="7">Pulses</option>
+          <option value="2">Ground Nuts</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input5">Nitrogen:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input5" name="input5" required>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input6">Potassium:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input6" name="input6" required>
+      </div>
+    </div>
+  
+    <div class="uk-margin">
+      <label class="uk-form-label" for="input7">Phosphorus:</label>
+      <div class="uk-form-controls">
+        <input class="uk-input" type="number" id="input7" name="input7" required>
+      </div>
+    </div>
+  
+    <button type="submit" class="uk-button uk-button-primary">Submit</button>
+  
+  </form>
+  
+  <div id="bg"></div>
+</div>
+<footer class="uk-section uk-section-default uk-section-small  uk-background-primary">
+  <div class="uk-container uk-text-center">
+    <h5 style="color: rgb(197, 197, 197)">Copyright &copy; 2024 Mayank Sharma</h5>
+    <ul class="uk-iconnav uk-justify uk-margin-top">
+      <li><a style="color: rgb(197, 197, 197)" href="https://github.com/" class="uk-icon-link"><i class="fab fa-github"></i>github</a></li>
+      <li><a style="color: rgb(197, 197, 197)" href="https://www.facebook.com/" class="uk-icon-link"><i class="fab fa-facebook-f"></i>facebook</a></li>
+      <li><a style="color: rgb(197, 197, 197)" href="https://www.instagram.com/" class="uk-icon-link"><i class="fab fa-instagram"></i>instagram</a></li>
+      <li><a style="color: rgb(197, 197, 197)" href="https://www.linkedin.com/" class="uk-icon-link"><i class="fab fa-linkedin-in"></i>linkedin</a></li>
+      <li><a style="color: rgb(197, 197, 197)" href="https://twitter.com/" class="uk-icon-link"><i class="fab fa-twitter"></i>twitter</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+
+</html>
+
