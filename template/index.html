@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.20.8/dist/js/uikit-icons.min.js"></script>
+
+<!--fontawesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/X.X.X/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/all.min.css">
+
+</head>
+<body>
+    
+
+    
+<nav class="uk-navbar-container" style="border-radius: 5px; background-color: #007bff;">
+    <div class="uk-container uk-background-primary">
+        <div uk-navbar="align: center" class="uk-background-primary">
+            
+            <div class="uk-navbar-center">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#" style="color: rgb(214, 214, 214); font-weight: bold;">SoilSmart</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-active"><a href="{{url_for('welcome')}}">Home</a></li>
+                                <li><a href="{{url_for('fertilizer_page')}}">fertilizer recommend</a></li>
+                                <li><a href="{{url_for('crop_recommend')}}">crop recommend</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<div style="margin-right: 50%;">
+<div id="google_translate_element"></div>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            {pageLanguage:'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+</div>
+<div class="uk-child-width-1-2@m" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+               <a href="{{url_for('crop_recommend')}}"> <img src="static/istockphoto.jpg" width="1800" height="1200" alt=""></a>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><a href="{{url_for('crop_recommend')}}">Crop Recommend</a></h3>
+                <h4>Maximize Your Yield: Intelligent Crop Recommendation System</h4>
+                <p>"Get personalized recommendations for optimal crop selection based on your location and climate."</p>
+                <p>click on above image to find out which crop you should select.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><a href="{{url_for('fertilizer_page')}}">Fertilizer Recommend</a></h3>
+                <h4>Maximize Your Yield: Intelligent Fertilizer Recommendation System</h4>
+                <p>"Get personalized recommendations for optimal fertilizer use based on your soil and crop needs."</p>
+                <p>Click on Below image to find out which fertilizer best for Your crops.</p>
+            </div>
+            <div class="uk-card-media-bottom">
+               <a href="{{url_for('fertilizer_page')}}"> <img src="static/blue-fertilizer.jpg" width="1800" height="1200" alt="fertilizer recommend"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-card-media-left uk-cover-container">
+        <img src="static/bg.jpg" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Media Left</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum blanditiis consequatur ab, minus repellendus vel ducimus assumenda, non quod ratione necessitatibus. Mollitia, deleniti harum voluptates alias eaque ex voluptatibus.</p>
+        </div>
+    </div>
+</div>
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+    <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+        <img src="static/bg.jpg" alt="" uk-cover>
+        <canvas width="600" height="400"></canvas>
+    </div>
+    <div>
+        <div class="uk-card-body">
+            <h3 class="uk-card-title">Media Right</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo natus minus repellat fugit provident corporis ipsam! Fugiat, natus, omnis at ex placeat inventore aliquid possimus fugit ipsa eius et obcaecati.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="uk-section uk-section-default uk-section-small  uk-background-primary">
+    <div class="uk-container uk-text-center">
+      <h5 style="color: rgb(197, 197, 197)">Copyright &copy; 2024 Mayank Sharma</h5>
+      <ul class="uk-iconnav uk-justify uk-margin-top">
+        <li><a style="color: rgb(197, 197, 197)" href="https://github.com/" class="uk-icon-link"><i class="fab fa-github"></i>github</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.facebook.com/" class="uk-icon-link"><i class="fab fa-facebook-f"></i>facebook</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.instagram.com/" class="uk-icon-link"><i class="fab fa-instagram"></i>instagram</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://www.linkedin.com/" class="uk-icon-link"><i class="fab fa-linkedin-in"></i>linkedin</a></li>
+        <li><a style="color: rgb(197, 197, 197)" href="https://twitter.com/" class="uk-icon-link"><i class="fab fa-twitter"></i>twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+  
+  
+
+</body>
+</html>
 
